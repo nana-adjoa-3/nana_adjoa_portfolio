@@ -1,6 +1,6 @@
 import Contact from "./Components/Contacts";
 import Experience from "./Components/Experience";
-import Hero from "./components/Hero";
+import Hero from "./Components/Hero";
 import Projects from "./Components/Projects";
 import Skills from "./Components/Skills";
 
