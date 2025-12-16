@@ -5,7 +5,7 @@ import { FaCalendar, FaMapMarkerAlt } from 'react-icons/fa';
 const Experience = () => {
   const experiences = [
     {
-      period: "2025 - Present",
+      period: "2025 - August 2025",
       title: "Software Development Facilitator",
       company: "Civilwise Ventures",
       location: "Winneba, Ghana",
@@ -17,7 +17,7 @@ const Experience = () => {
       ]
     },
     {
-      period: "2024 - 2025",
+      period: "2024 - September 2025",
       title: "Teaching & Technician Assistant",
       company: "University of Cape Coast",
       location: "Cape Coast, Ghana",
