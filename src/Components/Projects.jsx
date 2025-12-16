@@ -1,26 +1,64 @@
-// components/Projects.js
-import React from 'react';
-import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
+import React from "react";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 const Projects = () => {
   const projects = [
     {
-      title: "Multi-Page Application",
-      description: "A sophisticated multi-page platform demonstrating modern React patterns, complex routing, and responsive design. Built with clean architecture and optimized performance.",
-      technologies: ["React", "Tailwind CSS", "JavaScript", "Responsive Design"],
+      title: "Commodity Aggregation Platform (Frontend)",
+      description:
+        "A component-based frontend showcasing agricultural commodity aggregation services, improving clarity, trust, and onboarding for farmers and buyers.",
+      technologies: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
       liveLink: "https://multi-page-nana.vercel.app/",
       githubLink: "https://github.com/nana-adjoa-3/multi-page-nana",
-      image: "/api/placeholder/600/400",
-      features: ["Complex routing", "State management", "Mobile-first design", "Performance optimized"]
+      features: [
+        "Reusable UI components",
+        "Mobile-first responsive design",
+        "Animated transitions",
+        "Scalable routing structure",
+        "Performance optimization"
+      ]
     },
     {
-      title: "Test Portal System",
-      description: "An interactive assessment platform with dynamic functionality and real-time features. Designed for seamless user experience and modern web standards.",
-      technologies: ["React", "Tailwind CSS", "Interactive UI", "Modern Hooks"],
-      liveLink: "https://test-portal-psi.vercel.app/",
-      githubLink: "https://github.com/nana-adjoa-3/test-portal",
-      image: "/api/placeholder/600/400",
-      features: ["Dynamic forms", "Real-time updates", "User-friendly interface", "Clean code architecture"]
+      title: "Farm Management System",
+      description:
+        "A web-based system enabling farmers to manage livestock records, inventory, and daily operations digitally.",
+      technologies: ["React", "JavaScript", "HTML", "CSS", "MySQL"],
+      liveLink: "#",
+      githubLink: "#",
+      features: [
+        "CRUD farm records",
+        "Dashboard-style UI",
+        "Designed for non-technical users",
+        "Structured for future expansion"
+      ]
+    },
+    {
+      title: "Data Analytics & Visualization Dashboard",
+      description:
+        "An interactive dashboard that converts raw datasets into visual insights for better decision-making.",
+      technologies: ["Python", "SQL", "Power BI", "JavaScript"],
+      liveLink: "#",
+      githubLink: "#",
+      features: [
+        "Data cleaning & preparation",
+        "Interactive charts",
+        "Insight-driven layout",
+        "Clear analytical summaries"
+      ]
+    },
+    {
+      title: "AgriOne Platform",
+      description:
+        "A production-level AgriTech platform currently under active development.",
+      technologies: ["React", "Tailwind CSS"],
+      liveLink: "#",
+      githubLink: "#",
+      features: [
+        "Real-world product development",
+        "Reusable UI components",
+        "Scalable frontend architecture",
+        "🚧 Case study coming soon"
+      ]
     }
   ];
 
@@ -29,70 +67,49 @@ const Projects = () => {
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-            Featured <span className="text-blue-600">Projects</span>
+            Selected <span className="text-blue-600">Work</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Showcasing my expertise in building modern, responsive web applications with React and Tailwind CSS
+            Real-world frontend projects with a focus on usability, scalability, and impact
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {projects.map((project, index) => (
-            <div key={index} className="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
-              {/* Project Image */}
-              <div className="h-48 bg-gradient-to-r from-blue-500 to-cyan-500 relative">
-                <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                  <span className="text-white text-lg font-semibold">Project Preview</span>
-                </div>
-              </div>
+            <div key={index} className="bg-slate-50 rounded-2xl shadow-lg overflow-hidden">
+              <div className="h-40 bg-gradient-to-r from-blue-500 to-cyan-500" />
 
-              {/* Project Content */}
               <div className="p-8">
-                <h3 className="text-2xl font-bold text-slate-900 mb-3">{project.title}</h3>
-                <p className="text-slate-600 mb-6 leading-relaxed">{project.description}</p>
+                <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
+                <p className="text-slate-600 mb-6">{project.description}</p>
 
-                {/* Technologies */}
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {project.technologies.map((tech, techIndex) => (
-                    <span 
-                      key={techIndex}
-                      className="bg-white px-3 py-1 rounded-full text-sm font-medium text-slate-700 border border-slate-200"
-                    >
+                  {project.technologies.map((tech, i) => (
+                    <span key={i} className="px-3 py-1 bg-white border rounded-full text-sm">
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                {/* Features */}
-                <div className="mb-6">
-                  <h4 className="font-semibold text-slate-900 mb-2">Key Features:</h4>
-                  <ul className="text-slate-600 list-disc list-inside space-y-1">
-                    {project.features.map((feature, featureIndex) => (
-                      <li key={featureIndex}>{feature}</li>
-                    ))}
-                  </ul>
-                </div>
+                <ul className="list-disc list-inside text-slate-600 mb-6 space-y-1">
+                  {project.features.map((f, i) => (
+                    <li key={i}>{f}</li>
+                  ))}
+                </ul>
 
-                {/* Project Links */}
-                <div className="flex space-x-4">
-                  <a 
-                    href={project.liveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-                  >
-                    <FaExternalLinkAlt size={16} />
-                    <span>Live Demo</span>
-                  </a>
-                  <a 
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 border-2 border-slate-300 text-slate-700 px-6 py-3 rounded-lg font-semibold hover:border-blue-400 hover:text-blue-700 transition-colors"
-                  >
-                    <FaGithub size={16} />
-                    <span>Source Code</span>
-                  </a>
+                <div className="flex gap-4">
+                  {project.liveLink !== "#" && (
+                    <a href={project.liveLink} target="_blank" rel="noopener noreferrer"
+                      className="bg-blue-600 text-white px-5 py-3 rounded-lg flex items-center gap-2">
+                      <FaExternalLinkAlt /> Live
+                    </a>
+                  )}
+                  {project.githubLink !== "#" && (
+                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer"
+                      className="border px-5 py-3 rounded-lg flex items-center gap-2">
+                      <FaGithub /> Code
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
